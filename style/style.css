@@ -1,0 +1,45 @@
+body {
+    background-color: #009bff;
+}
+
+#container {
+    width: 400px;
+    height: 400px;
+    padding: 5px;
+    border: solid 1px;
+}
+
+#icone {
+    width: 150px;
+    height: 150px;
+    float:  right;
+}
+
+
+
+//tamanhos
+
+/*
+.thumb {
+    width: 150px; /* width of container 
+    height: 150px; /* height of container 
+    object-fit: cover;
+    object-position: 15px 5px; /* try 20% 10% 
+    border: 5px solid red;
+}
+
+
+.cropped1 {
+    width: 200px; /* width of container 
+    height: 200px; /* height of container 
+    object-fit: cover;
+    border: 5px solid black;
+}
+.cropped2 {
+    width: 200px; /* width of container 
+    height: 200px; /* height of container 
+    object-fit: cover;
+    object-position: 20px 10px; /* try 20% 10%  
+    border: 5px solid black;
+}
+*/
