@@ -7,7 +7,16 @@
 </head>
 <body>
 	<div id="container">
-		<img src="img/loading.gif" id="icone" alt="icon">
+		<figure id="icon_figure">
+			<img src="" id="icone" >
+			<figcaption id="icon_description">
+				Descrição
+			</figcaption>
+
+		</figure>
+		
+
+
 		<div id="city">Cidade: </div>
 		<div id="temp">Temp: </div>
 		<div id="feels">Sesação: </div>
@@ -19,6 +28,10 @@
 		<div id="windDirection">Direção do vento: </div>		
 		<div id="windSpeed">Velocidade do Vento: </div>
 		
+		<br>
+		Cidade:<br>
+		<input type="text" id="input_city" value="Sete Lagoas">
+		<input type="button" value="Buscar" onClick="buscar()">
 	</div>
 
 <script type="text/javascript" src="script/script.js"></script>

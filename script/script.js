@@ -5,6 +5,9 @@
     3 (interativo)
     4 (completo)
 */
+const apiKey = "5afbbc845b8905c01cf6672554439047";
+const httpRequest = new XMLHttpRequest();
+const conteudo = document.getElementById('container');
 
 var cidade = document.getElementById('city');
 var temperatura = document.getElementById('temp');
@@ -18,15 +21,22 @@ var dVento = document.getElementById('windDirection');
 var vVento = document.getElementById('windSpeed');
 var icone = document.getElementById('icone');
 var resposta;
+var entrada_cidade;
 
-var httpRequest = new XMLHttpRequest();
 
-httpRequest.onreadystatechange = proc;
 
-httpRequest.open('GET', 'https://api.openweathermap.org/data/2.5/weather?q=sete lagoas,br&units=metric&appid=5afbbc845b8905c01cf6672554439047', true);
-httpRequest.send();
 
-function proc () {
+function buscar() {
+  icone.src="img/loading.gif";
+
+  httpRequest.onreadystatechange = proc;
+  entrada_cidade = document.getElementById('input_city').value;
+
+  httpRequest.open('GET', `https://api.openweathermap.org/data/2.5/weather?q=${entrada_cidade},br&units=metric&lang=pt_br&appid=${apiKey}`, true);
+  httpRequest.send();
+}
+
+function proc() {
 	if (httpRequest.readyState === 4) {
       if (httpRequest.status === 200) {
         //document.write(httpRequest.responseText);
@@ -53,5 +63,6 @@ function showWeather () {
 
 
 	icone.src = `https://openweathermap.org/img/wn/${resposta.weather[0].icon}@2x.png`;
+  document.getElementById('icon_description').innerText = `${resposta.weather[0].description}`;
 	//https://openweathermap.org/img/wn/10d@2x.png
 }
