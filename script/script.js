@@ -56,7 +56,7 @@ function showWeather () {
 	sensacao.innerText = `Sesação: ${resposta.main.feels_like}`;
 	temp_min.innerText = `Minima: ${resposta.main.temp_min}`;
 	temp_max.innerText = `Maxima: ${resposta.main.temp_max}`;
-	nuvens.innerText = `Nuvens: ${resposta.clouds.all}`;
+	nuvens.innerText = `Nuvens: ${resposta.clouds.all}%`;
 	humidade.innerText = `Humidade: ${resposta.main.humidity}`;
 	pressao.innerText = `Pressão: ${resposta.main.pressure}`;
 	dVento.innerText = `Direção do vento: ${resposta.wind.deg}`;
