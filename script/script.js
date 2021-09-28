@@ -51,7 +51,7 @@ function proc() {
 }
 
 function showWeather () {
-	cidade.innerText = `Cidade: ${resposta.name}`;
+	cidade.innerText = `Cidade: ${resposta.name}-${resposta.sys.country}`;
 	temperatura.innerText = `Temp: ${resposta.main.temp}`;
 	sensacao.innerText = `Sesação: ${resposta.main.feels_like}`;
 	temp_min.innerText = `Minima: ${resposta.main.temp_min}`;
