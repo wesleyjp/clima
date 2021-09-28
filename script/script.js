@@ -43,23 +43,24 @@ function proc() {
         resposta = JSON.parse(httpRequest.responseText);
         showWeather();
       } else {
-        document.write(`Erro: There was a problem with the request. <br> Ready: _ ${httpRequest.readyState} <br> Status: _ ${httpRequest.status} <br> Text: ${httpRequest.responseText}`);
+        document.getElementById('icon_description').innerText = "Desculpe, cidade não encontrada";
+        icone.src = "img/cloud2.png";
       }
     }
   
 }
 
 function showWeather () {
-	cidade.innerText += resposta.name;
-	temperatura.innerText += resposta.main.temp;
-	sensacao.innerText += resposta.main.feels_like;
-	temp_min.innerText += resposta.main.temp_min;
-	temp_max.innerText += resposta.main.temp_max;
-	nuvens.innerText += resposta.clouds.all;
-	humidade.innerText += resposta.main.humidity;
-	pressao.innerText += resposta.main.pressure;
-	dVento.innerText += resposta.wind.deg;
-	vVento.innerText += resposta.wind.speed;
+	cidade.innerText = `Cidade: ${resposta.name}`;
+	temperatura.innerText = `Temp: ${resposta.main.temp}`;
+	sensacao.innerText = `Sesação: ${resposta.main.feels_like}`;
+	temp_min.innerText = `Minima: ${resposta.main.temp_min}`;
+	temp_max.innerText = `Maxima: ${resposta.main.temp_max}`;
+	nuvens.innerText = `Nuvens: ${resposta.clouds.all}`;
+	humidade.innerText = `Humidade: ${resposta.main.humidity}`;
+	pressao.innerText = `Pressão: ${resposta.main.pressure}`;
+	dVento.innerText = `Direção do vento: ${resposta.wind.deg}`;
+	vVento.innerText = `Velocidade do Vento: ${resposta.wind.speed}`;
 
 
 	icone.src = `https://openweathermap.org/img/wn/${resposta.weather[0].icon}@2x.png`;
